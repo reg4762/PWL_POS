@@ -25,7 +25,8 @@ class KategoriDataTable extends DataTable
             ->addColumn('action', function($kategori){
                 return
                 '<div class="btn-group" role="group">
-                    <a href="/kategori/update/'. $kategori->kategori_id .'" type="button" class="btn btn-sm btn-warning mr-2">Update</a>
+                    <a href="/kategori/edit/'. $kategori->kategori_id .'" type="button" class="btn btn-sm btn-warning mr-2">Edit</a>
+                    <a href="/kategori/destroy/'. $kategori->kategori_id .'" type="button" class="btn btn-sm btn-danger">Delete</a>
                 </div>';
             })
 /*             ->addColumn('action', 'kategori.action') */

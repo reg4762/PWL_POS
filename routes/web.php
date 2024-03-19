@@ -20,6 +20,6 @@ Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/kategori/create', [KategoriController::class, 'create']);
 Route::post('/kategori', [KategoriController::class, 'store']);
-Route::get('/kategori/update/{id}', [KategoriController::class, 'update']);
-Route::put('/kategori/update_save/{id}', [KategoriController::class, 'update_save']);
-
+Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit']);
+Route::put('/kategori/edit_simpan/{id}', [KategoriController::class, 'edit_simpan']);
+Route::get('/kategori/destroy/{id}', [KategoriController::class, 'destroy']);
