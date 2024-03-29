@@ -20,11 +20,14 @@ class LevelController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'level_kode' => 'bail|required|string|max:255',
+            'level_nama' => 'bail|required|string|max:255',
+        ]);
+
         LevelModel::create([
             'level_nama'=> $request->level_nama,
-            'level_id' => $request->level_id,   
             'level_kode' => $request->level_kode,
-
         ]);
         return redirect('/level');
     }

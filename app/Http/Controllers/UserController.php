@@ -21,6 +21,13 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'username' => 'bail|required|string|max:255',
+            'nama' => 'bail|required|string|max:255',
+            'password' => 'bail|required|string|max:255',
+            'level_id' => 'bail|required|string|max:255',
+        ]);
+
         UserModel::create([
             'username' => $request->username,
             'nama' => $request->nama,

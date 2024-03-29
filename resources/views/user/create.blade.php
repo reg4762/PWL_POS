@@ -22,6 +22,7 @@
                         <div class="alert  alert-danger">{{ $message }}</div>  
                     @enderror
                     </div>
+                    
                     <div class="form-group">
                         <label for="nama">Nama</label>
                         <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Nama">
@@ -29,6 +30,7 @@
                         <div class="alert  alert-danger">{{ $message }}</div>  
                     @enderror
                     </div>
+                    
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password">
@@ -36,6 +38,7 @@
                         <div class="alert  alert-danger">{{ $message }}</div>  
                     @enderror
                     </div>
+                    
                     <div class="form-group">
                         <label for="level_id">ID Level</label>
                         <input type="number" class="form-control @error('level_id') is-invalid @enderror" id="level_id" name="level_id" placeholder="Id Level">
@@ -44,6 +47,7 @@
                     @enderror
                     </div>
                 </div>
+               
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary fileinput-button">Submit</button>
                 </div>
