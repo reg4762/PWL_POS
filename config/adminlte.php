@@ -386,6 +386,11 @@ return [
             'url' => '/level',
             'icon' => 'fas fa-fw fa-layer-group',
         ],
+        [
+            'text' => 'M_user',
+            'url' => '/m_user',
+            'icon' => 'fas fa-fw fa-thin fa-user-secret',
+        ],
         ['header' => 'labels'],
         [
             'text' => 'important',
