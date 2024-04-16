@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\m_user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class POSController extends Controller
 {
@@ -59,9 +60,19 @@ class POSController extends Controller
      */
     public function show(string $id, m_user $useri)
     {
-        $useri = m_user::findOrFail($id);
-        return view('m_user.show', compact('useri'));
+        try {
+            $useri = m_user::findOrFail($id)->load('level');
+            return view('m_user.show', compact('useri'));
+        } catch (ModelNotFoundException $e) {
+            abort(404); // Melemparkan tampilan 404 jika pengguna tidak ditemukan
+        }
     }
+
+    // public function show(string $id, m_user $useri)
+    // {
+    //     $useri = m_user::findOrFail($id);
+    //     return view('m_user.show', compact('useri'));
+    // }
 
     /**
      * Show the form for editing the specified resource.
