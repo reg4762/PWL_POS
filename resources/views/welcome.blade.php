@@ -187,12 +187,12 @@
 
 @section('css')
 {{-- Add here extra stylesheets --}}
-{{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}} @stop
+{{-- <link rel="stylesheet" href="/css/admin_custom.css"> @stop
 
 @section('js')
 <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script> @stoppt> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
 @stop
-
+ --}}
 
 {{-- <!DOCTYPE html>
 <html lang="en">
@@ -1931,9 +1931,3 @@
 <script src="template/dist/js/pages/dashboard2.js"></script>
 </body>
 </html> --}}
-
-
-
-
-
- --}}
