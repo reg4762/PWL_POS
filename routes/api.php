@@ -16,8 +16,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// // logout
-// Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('logout');
+// logout
+Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('logout');
 
 // // CRUD LEVEL
 // Route::get('levels', [LevelController::class, 'index']);
