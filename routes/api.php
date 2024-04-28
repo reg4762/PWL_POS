@@ -19,12 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // logout
 Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('logout');
 
-// // CRUD LEVEL
-// Route::get('levels', [LevelController::class, 'index']);
-// Route::post('levels', [LevelController::class, 'store']);
-// Route::get('levels/{level}', [LevelController::class, 'show']);
-// Route::put('levels/{level}', [LevelController::class, 'update']);
-// Route::delete('levels/{level}', [LevelController::class, 'destroy']);
+// CRUD LEVEL
+Route::get('levels', [LevelController::class, 'index']);
+Route::post('levels', [LevelController::class, 'store']);
+Route::get('levels/{level}', [LevelController::class, 'show']);
+Route::put('levels/{level}', [LevelController::class, 'update']);
+Route::delete('levels/{level}', [LevelController::class, 'destroy']);
 
 // // CRUD USER
 // Route::get('users', [UserController::class, 'index']);
