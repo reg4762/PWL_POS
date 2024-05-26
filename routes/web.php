@@ -170,3 +170,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::get('/file-upload', [FileUploadController::class, 'fileUpload']);
 Route::post('/file-upload', [FileUploadController::class, 'prosesfileUpload']);
+
+//TUGAS 1
+Route::get('/file-upload-name', [FileUploadController::class, 'fileUploadName']);
+Route::post('/file-upload-name', [FileUploadController::class,
+'prosesFileUploadName']);
