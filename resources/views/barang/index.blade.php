@@ -9,37 +9,22 @@
             </div>
         </div>
         <div class="card-body">
-            @if (session('success'))
-                <div class="alert alert-success">{{ session('success')}}</div>
+            @if(session('success'))
+            <div class="alert alert-success"> {{ session('success') }} </div>
             @endif
-            @if (session('error'))
-                <div class="alert alert-denger">{{ session('error')}}</div>
+            @if(session('error'))
+            <div class="alert alert-danger"> {{ session('error') }} </div>
             @endif
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group row">
-                        <label class="col-1 control-label col-form-label">Filter:</label>
-                        <div class="col-3">
-                            <select class="form-control" id="kategori_id" name="kategori_id" required>
-                                <option value="">- Semua -</option>
-                                @foreach($kategori as $item)
-                                <option value="{{ $item->kategori_id }}">{{ $item->kategori_nama }}</option>
-                                @endforeach
-                            </select>
-                            <small class="Form-text text-muted">Kategori Barang</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <table class="table table-bordered table-striped table-hover table-sm" id="table_barang">
                 <thead>
                     <tr>
-                        <th>ID Barang</th>
-                        <th>Kategori Barang</th>
+                        <th>ID</th>
                         <th>Kode Barang</th>
                         <th>Nama Barang</th>
+                        <th>Nama Kategori</th>
                         <th>Harga Beli</th>
                         <th>Harga Jual</th>
+                        <th>Gambar Barang</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -95,7 +80,17 @@
                         className: "",
                         orderable: false,       //true, jika ingin kolom diurutkan
                         searchable: false       //true, jika kolom bisa dicari
-                    },{
+                    },
+                    {
+                    data: "image",
+                    className: "",
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, row) {
+                        return '<img src="' + data + '" alt="Image" class="img-thumbnail" width="100">';
+                        }
+                    },
+                    {
                         data: "aksi",
                         className: "",
                         orderable: false,       //true, jika ingin kolom diurutkan
